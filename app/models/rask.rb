@@ -1,0 +1,2 @@
+class Rask < ApplicationRecord
+end
