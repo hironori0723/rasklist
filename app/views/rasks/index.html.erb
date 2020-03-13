@@ -1,0 +1,9 @@
+<h1>ラスク一覧</h1>
+
+<ul>
+  <% @rasks.each do |rask| %>
+    <li><%= link_to rask.id, rask %> : <%= rask.content %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'ラスク新規作成', new_rask_path %>
