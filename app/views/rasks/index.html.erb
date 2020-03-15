@@ -2,7 +2,7 @@
 
 <ul>
   <% @rasks.each do |rask| %>
-    <li><%= link_to rask.id, rask %> : <%= rask.content %></li>
+    <li><%= link_to rask.id, rask %> : <%= rask.status %> &gt; <%= rask.content %></li>
   <% end %>
 </ul>
 

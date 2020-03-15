@@ -1,10 +1,11 @@
 class RasksController < ApplicationController
+    before_action :set_rasks, only: [:show, :edit, :update, :destroy]
+    
     def index
         @rasks = Rask.all
     end
     
     def show
-        @rask = Rask.find(params[:id])
     end
     
     def new
@@ -24,12 +25,9 @@ class RasksController < ApplicationController
     end
     
     def edit
-        @rask = Rask.find(params[:id])
     end
     
     def update
-        @rask = Rask.find(params[:id])
-        
         if @rask.update(rask_params)
             flash[:success] = 'ラスクが編集されました'
             redirect_to @rask
@@ -40,7 +38,6 @@ class RasksController < ApplicationController
     end
     
     def destroy
-        @rask = Rask.find(params[:id])
         @rask.destroy
         
         flash[:success] = 'ラスクを消去しました'
@@ -50,6 +47,10 @@ end
 
     private
     
+    def set_rasks
+        @rask = Rask.find(params[:id])
+    end
+    
     def rask_params
-        params.require(:rask).permit(:content)
+        params.require(:rask).permit(:content, :status)
     end

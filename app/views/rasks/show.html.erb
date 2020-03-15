@@ -1,6 +1,7 @@
 <h1>id: <%= @rask.id %> ラスク詳細ページ</h1>
 
-<p><%= @rask.content %></p>
+<p>ステータス：<%= @rask.content %></p>
+<p>ラスク：<%= @rask.content %></p>
 
 <%= link_to '一覧に戻る', rasks_path %>
 <%= link_to '編集ページへ', edit_rask_path %>
